@@ -6,10 +6,11 @@
     [ngStyle]="{backgroundColor: el >= 5 ? 'blue' : 'transparent'}"
     [ngClass]="{'white-text': el >= 5}"
     >{{ el }}</div>
+<p>btn Component Clicks = {{ numberOfClicks }}</p>
 
 <!-- For working with index of array -->
-<div
+<!-- <div
         *ngFor="let logItem of clickArray; let i = index"
         [ngStyle]="{backgroundColor: i >= 4 ? 'blue' : 'transparent'}"
         [ngClass]="{'white-text': i >= 4}"
-      >{{ logItem }}</div>
+      >{{ logItem }}</div> -->

@@ -1,0 +1,6 @@
+p {
+    border-style:double;
+    padding: 10px;
+    /* display:inline; */
+    color: blue;
+}
