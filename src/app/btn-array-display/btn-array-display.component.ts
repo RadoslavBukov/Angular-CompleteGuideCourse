@@ -1,4 +1,4 @@
-import { Component, Input, ViewEncapsulation } from '@angular/core';
+import { Component, Input, ViewEncapsulation, OnChanges, DoCheck } from '@angular/core';
 
 @Component({
   selector: 'app-btn-array-display',
@@ -6,10 +6,13 @@ import { Component, Input, ViewEncapsulation } from '@angular/core';
   styleUrl: './btn-array-display.component.css',
   encapsulation:ViewEncapsulation.Emulated,
 })
-export class BtnArrayDisplayComponent {
+export class BtnArrayDisplayComponent implements DoCheck{
   showText = false;
   clickArray = [];
   @Input() numberOfClicks = 0;
+
+  ngDoCheck() {
+  }
 
   changeDisplay() {
     this.clickArray.push(this.clickArray.length + 1);

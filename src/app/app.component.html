@@ -1,8 +1,33 @@
+<!--  
+Practic with btn-array-display
 <input type="text" [(ngModel)]="title">
 <p>{{ title }}</p>
-<!-- <app-server></app-server> -->
-<!-- <app-success-alert></app-success-alert> -->
-<!-- <app-warning-alert></app-warning-alert> -->
+<app-server></app-server>
 <app-btn-array-display
     [numberOfClicks]="clicks">Number of clicks:</app-btn-array-display>
 <p>Clicks = {{ clicks }}</p>
+ -->
+
+ <div class="container">
+    <app-cockpit
+      (serverCreated)="onServerAdded($event)"
+      (bpCreated)="onBlueprintAdded($event)"
+    ></app-cockpit>
+    <hr>
+    <div class="row">
+      <div class="col-xs-12">
+        <button class="btn btn-primary" (click)="onChangeFirst()">Change first Element</button>
+        <button class="btn btn-danger" (click)="onDestroyFirst()">Destroy first Component</button>
+        <app-server-element
+          *ngFor="let serverElement of serverElements"
+          [srvElement]="serverElement"
+          [name]="serverElement.name">
+          <p #contentParagraph>
+            <strong *ngIf="serverElement.type === 'server'" style="color: red">{{ serverElement.content }}</strong>
+            <em *ngIf="serverElement.type === 'blueprint'">{{ serverElement.content }}</em>
+          </p>
+        </app-server-element>
+      </div>
+    </div>
+  </div>
+  
