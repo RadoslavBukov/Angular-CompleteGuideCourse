@@ -1,27 +1,77 @@
-# App
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 17.0.5.
+# Angular Complete Guide Course App
 
-## Development server
+This project is a learning playground based on the Angular Complete Guide course. It demonstrates Angular fundamentals, component communication, dynamic rendering, and server-side rendering (SSR) with Express. The app is built with [Angular CLI](https://github.com/angular/angular-cli) v17.0.5.
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+## Features
 
-## Code scaffolding
+- **Component Communication**: Demonstrates parent-child and sibling communication using `@Input`, `@Output`, and event emitters.
+- **Dynamic Rendering**: Add, update, and remove server/blueprint elements dynamically.
+- **Custom Components**:
+	- `CockpitComponent`: Add new servers or blueprints.
+	- `ServerElementComponent`: Display server/blueprint details.
+	- `BtnArrayDisplayComponent`: Track and display button clicks with conditional styling.
+	- `SuccessAlertComponent` & `WarningAlertComponent`: Show styled alert messages.
+- **Bootstrap Styling**: Uses Bootstrap 5 for UI components.
+- **Server-Side Rendering (SSR)**: Includes an Express server for SSR (see below).
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+## Getting Started
 
-## Build
+### Prerequisites
+- Node.js (v18+ recommended)
+- npm
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+### Installation
+```bash
+npm install
+```
 
-## Running unit tests
+### Development Server
+```bash
+npm start
+# or
+ng serve
+```
+Navigate to [http://localhost:4200/](http://localhost:4200/) in your browser. The app reloads automatically on code changes.
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+### Build
+```bash
+ng build
+```
+Build artifacts are stored in the `dist/` directory.
 
-## Running end-to-end tests
+### Running Unit Tests
+```bash
+ng test
+```
+Executes unit tests via [Karma](https://karma-runner.github.io).
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+### Server-Side Rendering (SSR)
+This project includes a basic Express server for SSR. To build and run SSR:
+```bash
+ng build && ng run app:server
+node dist/app/server/server.mjs
+```
 
-## Further help
+### Project Structure
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+- `src/app/btn-array-display/` — Button click tracker component
+- `src/app/cockpit/` — Add new servers/blueprints
+- `src/app/server-element/` — Display server/blueprint details
+- `src/app/success-alert/` — Success alert component
+- `src/app/warning-alert/` — Warning alert component
+- `server.ts` — Express server for SSR
+
+## Usage
+
+- Add servers or blueprints using the Cockpit form.
+- View and interact with the list of server elements.
+- Use the button array display to see click tracking and dynamic styling.
+
+## Author
+
+Radoslav Bukov
+
+## License
+
+This project is for educational purposes.
